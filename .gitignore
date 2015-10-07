@@ -8,7 +8,9 @@ scalaClient/lib_managed/
 scalaClient/src_managed/
 scalaClient/project/boot/
 scalaClient/project/plugins/project/
+scalaClient/project/target/
+scalaClient/project/project/
 
 # Scala-IDE specific
 .scala_dependencies
-
+scalaClient/.idea/

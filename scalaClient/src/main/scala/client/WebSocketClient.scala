@@ -11,9 +11,10 @@ import spray.http.{HttpHeaders, HttpMethods, HttpRequest}
 
 abstract class WebSocketClient extends websocket.WebSocketClientWorker {
   import context._
-  IO(UHttp) ! Http.Connect(host, port, ssl)
 
   val wsUrl: String
+  val (host, port, ssl, path) = parseWSURL(wsUrl)
+  IO(UHttp) ! Http.Connect(host, port, ssl)
 
   val uuid = java.util.UUID.randomUUID.toString
   val headers = List(
@@ -24,7 +25,7 @@ abstract class WebSocketClient extends websocket.WebSocketClientWorker {
     HttpHeaders.RawHeader("Sec-WebSocket-Key", uuid),
     HttpHeaders.RawHeader("Sec-WebSocket-Extensions", "permessage-deflate"))
 
-  val (host, port, ssl, path) = parseWSURL(wsUrl)
+
   def upgradeRequest = HttpRequest(HttpMethods.GET, path, headers)
 
   def parseWSURL(url: String): (String, Int, Boolean, String) = {
