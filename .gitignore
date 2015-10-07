@@ -1,0 +1,14 @@
+# sbt specific
+scalaClient/.cache
+scalaClient/.history
+scalaClient/.lib/
+scalaClient/dist/*
+scalaClient/target/
+scalaClient/lib_managed/
+scalaClient/src_managed/
+scalaClient/project/boot/
+scalaClient/project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+

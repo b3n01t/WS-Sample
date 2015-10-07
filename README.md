@@ -11,7 +11,7 @@ Scala client uses [spray-websocket](https://github.com/wandoulabs/spray-websocke
 - Install: ``npm install``
 - Run: ``npm start``
 
-##Scala 
+##Scala Client
 - Depends on [akka Actors](http://doc.akka.io/docs/akka/snapshot/scala/actors.html) and [spray-websocket](https://github.com/wandoulabs/spray-websocket)
 - Main file: ``scalaClient/src/main/scala/client/WebSocketClientExample.scala``
 - Connects to:``localhost:9001`` 
